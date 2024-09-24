@@ -5,7 +5,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DistritoResponse {
+public class DistritoDto {
 
     private String codigo;
     private String descripcion;

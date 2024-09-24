@@ -6,9 +6,8 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DepartamentoResponse {
+public class ProvinciaDto {
+
     private String codigo;
     private String descripcion;
-
 }
-
