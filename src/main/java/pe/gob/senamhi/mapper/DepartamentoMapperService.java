@@ -7,9 +7,9 @@ import pe.gob.senamhi.dto.DepartamentoDto;
 import pe.gob.senamhi.model.Departamento;
 
 public class DepartamentoMapperService implements MapperService<Departamento, DepartamentoDto> {
-
     @Autowired
     private ModelMapper modelMapper;
+    
     @Override
     public DepartamentoDto convertToDto(Departamento request) {
         DepartamentoDto dto = modelMapper.map(request, DepartamentoDto.class);

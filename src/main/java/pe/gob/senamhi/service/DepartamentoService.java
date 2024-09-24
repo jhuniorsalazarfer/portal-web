@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class DepartamentoService extends DepartamentoMapperService {
-
     @Autowired
     private DepartamentoRepository repository;
 

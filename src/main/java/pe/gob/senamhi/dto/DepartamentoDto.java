@@ -2,12 +2,12 @@ package pe.gob.senamhi.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DepartamentoDto {
-    private String codigoPais;
+    
+	private String codigoPais;
     private String codDepartamento;
     private String nomDepartamento;
     private String numPersonas;

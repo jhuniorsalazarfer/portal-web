@@ -8,28 +8,28 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pe.gob.senamhi.dto.DepartamentoDto;
-import pe.gob.senamhi.service.DepartamentoService;
+import pe.gob.senamhi.dto.DependenciaDto;
+import pe.gob.senamhi.service.DependenciaService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "departamentos")
+@RequestMapping(path = "dependencias")
 @RequiredArgsConstructor
 @CrossOrigin("*")
-public class DepartamentoController {
+public class DependenciaController {
 
     @Autowired
-    private DepartamentoService services;
+    private DependenciaService services;
 
     @GetMapping("/lista")
     public String filtroDepartamento() {
         return "Filtro Dep";
     }
-    
+
     @GetMapping("/listar")
-    public ResponseEntity<List<DepartamentoDto>> listar() {
-        List<DepartamentoDto> dtos = services.listar();
+    public ResponseEntity<List<DependenciaDto>> listar() {
+        List<DependenciaDto> dtos = services.getAll();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 }
