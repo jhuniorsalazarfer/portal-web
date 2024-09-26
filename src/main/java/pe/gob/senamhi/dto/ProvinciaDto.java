@@ -2,12 +2,16 @@ package pe.gob.senamhi.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.Column;
+import javax.persistence.Id;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProvinciaDto {
 
-    private String codigo;
-    private String descripcion;
+    private String codProvincia;
+    private String codigoPais;
+    private String codDepartamento;
+    private String nomProvincia;
 }
