@@ -21,4 +21,13 @@ public class EstacionService extends EstacionMapperService {
 
         return dto;
     }
+
+    public List<EstacionDto> getAllConvenio() {
+        String cod = "2215";
+        List<EstacionDto> dto = repository.finByCodConvenio(cod).stream().map(this::convertToDto)
+                .collect(Collectors.toList());
+        return dto;
+    }
+
+
 }

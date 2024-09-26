@@ -66,6 +66,9 @@ public class Estacion {
     @Column(name = "N_ALT_MTS")
     private String alturamsnm;
 
+    @Column(name = "V_COD_COND")
+    private String codCondicion;
+
     @Column(name = "V_SUB_ESTA")
     private String codigoTipoEstacion;
 

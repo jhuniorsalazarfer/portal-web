@@ -32,4 +32,10 @@ public class EstacionController {
         List<EstacionDto> dtos = services.getAll();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
+
+    @GetMapping("/listarConvenio")
+    public ResponseEntity<List<EstacionDto>> listarConvenio() {
+        List<EstacionDto> dtos = services.getAllConvenio();
+        return new ResponseEntity<>(dtos, HttpStatus.OK);
+    }
 }

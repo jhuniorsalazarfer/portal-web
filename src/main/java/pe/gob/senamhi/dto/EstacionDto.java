@@ -25,6 +25,7 @@ public class EstacionDto {
     private String latitudSegundo;
     private String latitudSIG;
     private String alturamsnm;
+    private String codCondicion;
     private String codigoTipoEstacion;
     private String claseEstacion;
 }
