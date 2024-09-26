@@ -3,9 +3,11 @@ package pe.gob.senamhi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.senamhi.dto.DepartamentoDto;
+import pe.gob.senamhi.dto.EstacionDto;
 import pe.gob.senamhi.mapper.DepartamentoMapperService;
 import pe.gob.senamhi.repository.DepartamentoRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,10 +31,24 @@ public class DepartamentoService extends DepartamentoMapperService {
 
     public List<DepartamentoDto> getAllConvenio() {
 
-        List<DepartamentoDto> dto = repository.findAll()
-                .stream().map(this::convertToDto)
-                .collect(Collectors.toList());
-        return dto;
+        List<EstacionDto> estacionDtos = estacionService.getAllConvenio();
+        List<DepartamentoDto> departamentoConvenioListDto = null;
+
+        if (!estacionDtos.isEmpty()){
+            List<String> codigosList = estacionDtos.stream()
+                    .map(EstacionDto::getCodDepartamento)
+                    .collect(Collectors.toList());
+
+            codigosList.stream().distinct().collect(Collectors.toList());
+
+            for (String codig: codigosList) {
+                DepartamentoDto departamentoConvenioDto = new DepartamentoDto();
+                departamentoConvenioDto = repository.findById(codig).map(this::convertToDto).orElse(null);
+                departamentoConvenioListDto.add(departamentoConvenioDto);
+            }
+        }
+
+        return departamentoConvenioListDto;
     }
 
     public DepartamentoDto findById(String codDep) {
