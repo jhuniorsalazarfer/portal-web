@@ -22,11 +22,6 @@ public class DependenciaController {
     @Autowired
     private DependenciaService services;
 
-    @GetMapping("/lista")
-    public String filtroDepartamento() {
-        return "Filtro Dep";
-    }
-
     @GetMapping("/listar")
     public ResponseEntity<List<DependenciaDto>> listar() {
         List<DependenciaDto> dtos = services.getAll();

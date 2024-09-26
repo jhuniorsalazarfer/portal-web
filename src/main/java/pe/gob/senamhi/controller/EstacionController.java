@@ -22,11 +22,6 @@ public class EstacionController {
     @Autowired
     private EstacionService services;
 
-    @GetMapping("/lista")
-    public String filtroDepartamento() {
-        return "Filtro Dep";
-    }
-
     @GetMapping("/listar")
     public ResponseEntity<List<EstacionDto>> listar() {
         List<EstacionDto> dtos = services.getAll();

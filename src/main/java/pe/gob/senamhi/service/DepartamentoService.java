@@ -9,10 +9,15 @@ import pe.gob.senamhi.repository.DepartamentoRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.lang.Integer.parseInt;
+
 @Service
 public class DepartamentoService extends DepartamentoMapperService {
     @Autowired
     private DepartamentoRepository repository;
+
+    @Autowired
+    private EstacionService estacionService;
 
     public List<DepartamentoDto> getAll() {
 
@@ -20,5 +25,17 @@ public class DepartamentoService extends DepartamentoMapperService {
                 .stream().map(this::convertToDto)
                 .collect(Collectors.toList());
         return dto;
+    }
+
+    public List<DepartamentoDto> getAllConvenio() {
+
+        List<DepartamentoDto> dto = repository.findAll()
+                .stream().map(this::convertToDto)
+                .collect(Collectors.toList());
+        return dto;
+    }
+
+    public DepartamentoDto findById(String codDep) {
+        return repository.findById(codDep).map(this::convertToDto).orElse(null);
     }
 }
