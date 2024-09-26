@@ -14,12 +14,11 @@ public class DepartamentoService extends DepartamentoMapperService {
     @Autowired
     private DepartamentoRepository repository;
 
-    public List<DepartamentoDto> listar() {
+    public List<DepartamentoDto> getAll() {
 
-        List<DepartamentoDto> dto = repository.findAll().stream().map(this::convertToDto)
+        List<DepartamentoDto> dto = repository.findAll()
+                .stream().map(this::convertToDto)
                 .collect(Collectors.toList());
-
         return dto;
     }
-
 }
