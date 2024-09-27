@@ -19,14 +19,14 @@ public class DepartamentoController {
     @Autowired
     private DepartamentoService services;
     
-    @GetMapping("/listar")
-    public ResponseEntity<List<DepartamentoDto>> listar() {
+    @GetMapping("/list")
+    public ResponseEntity<List<DepartamentoDto>> getAll() {
         List<DepartamentoDto> dtos = services.getAll();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
-    @GetMapping("/listarConvenio")
-    public ResponseEntity<List<DepartamentoDto>> listConvenio() {
+    @GetMapping("/listConvenio")
+    public ResponseEntity<List<DepartamentoDto>> getAllConvenio() {
         List<DepartamentoDto> dtos = services.getAllConvenio();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }

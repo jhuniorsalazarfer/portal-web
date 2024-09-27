@@ -4,10 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pe.gob.senamhi.dto.EstacionDto;
 import pe.gob.senamhi.service.EstacionService;
 
@@ -22,15 +19,21 @@ public class EstacionController {
     @Autowired
     private EstacionService services;
 
-    @GetMapping("/listar")
-    public ResponseEntity<List<EstacionDto>> listar() {
+    @GetMapping("/list")
+    public ResponseEntity<List<EstacionDto>> getAll() {
         List<EstacionDto> dtos = services.getAll();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
-    @GetMapping("/listarConvenio")
-    public ResponseEntity<List<EstacionDto>> listarConvenio() {
+    @GetMapping("/listConvenio")
+    public ResponseEntity<List<EstacionDto>> getAllConvenio() {
         List<EstacionDto> dtos = services.getAllConvenio();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/get/{codEsta}")
+    public ResponseEntity<?> getByCod(@PathVariable String codEsta) throws Exception {
+        EstacionDto estacionDto = services.findById(codEsta);
+        return new ResponseEntity(estacionDto, HttpStatus.OK);
     }
 }

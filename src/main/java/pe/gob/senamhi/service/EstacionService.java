@@ -29,4 +29,8 @@ public class EstacionService extends EstacionMapperService {
         return dto;
     }
 
+    public EstacionDto findById(String codEsta) {
+        return repository.findById(codEsta).map(this::convertToDto).orElse(null);
+    }
+
 }
