@@ -27,19 +27,21 @@ public class DepartamentoService extends DepartamentoMapperService {
         return dto;
     }
 
-    public List<DepartamentoDto> getAllConvenio() {
+	public List<DepartamentoDto> getAllConvenio() {
 
         List<EstacionDto> estacionDtos = estacionService.getAllConvenio();
-        List<DepartamentoDto> departamentoConvenioListDto = null;
+        List<DepartamentoDto> departamentoConvenioListDto = new ArrayList<>();
 
         if (!estacionDtos.isEmpty()){
             List<String> codigosList = estacionDtos.stream()
                     .map(EstacionDto::getCodDepartamento)
                     .collect(Collectors.toList());
+            
+            List<String> codigosDepa = new ArrayList<>();
 
-            codigosList.stream().distinct().collect(Collectors.toList());
+            codigosDepa = codigosList.stream().distinct().collect(Collectors.toList());
 
-            for (String codig: codigosList) {
+            for (String codig: codigosDepa) {
                 DepartamentoDto departamentoConvenioDto = new DepartamentoDto();
                 departamentoConvenioDto = repository.findById(codig).map(this::convertToDto).orElse(null);
                 departamentoConvenioListDto.add(departamentoConvenioDto);
