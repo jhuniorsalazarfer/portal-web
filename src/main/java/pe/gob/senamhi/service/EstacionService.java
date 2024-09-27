@@ -23,11 +23,10 @@ public class EstacionService extends EstacionMapperService {
     }
 
     public List<EstacionDto> getAllConvenio() {
-        String cod = "2215";
+        String cod = "2208";
         List<EstacionDto> dto = repository.finByCodConvenio(cod).stream().map(this::convertToDto)
                 .collect(Collectors.toList());
         return dto;
     }
-
 
 }
