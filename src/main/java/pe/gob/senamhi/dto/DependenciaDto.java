@@ -2,8 +2,7 @@ package pe.gob.senamhi.dto;
 
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DependenciaDto {

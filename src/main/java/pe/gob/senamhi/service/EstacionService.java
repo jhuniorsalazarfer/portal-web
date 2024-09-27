@@ -14,17 +14,23 @@ public class EstacionService extends EstacionMapperService {
     @Autowired
     private EstacionRepository repository;
 
-    public List<EstacionDto> getAll() {
-
-        List<EstacionDto> dto = repository.findAll().stream().map(this::convertToDto)
-                .collect(Collectors.toList());
-
-        return dto;
-    }
-
     public List<EstacionDto> getAllConvenio() {
         String cod = "2208";
         List<EstacionDto> dto = repository.finByCodConvenio(cod).stream().map(this::convertToDto)
+                .collect(Collectors.toList());
+        return dto;
+    }
+
+    public List<EstacionDto> getAllConvenioProv(String codDep) {
+        String codConvenio = "2208";
+        List<EstacionDto> dto = repository.finByCodConvenioAndCodDep(codConvenio,codDep).stream().map(this::convertToDto)
+                .collect(Collectors.toList());
+        return dto;
+    }
+
+    public List<EstacionDto> getAllConvenioDist(String codProv, String codDep) {
+        String codConvenio = "2208";
+        List<EstacionDto> dto = repository.finByCodConvenioAndCodDepAndCodProv(codConvenio,codProv,codDep).stream().map(this::convertToDto)
                 .collect(Collectors.toList());
         return dto;
     }

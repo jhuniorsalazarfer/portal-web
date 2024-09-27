@@ -1,12 +1,15 @@
 package pe.gob.senamhi.dto;
 import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.Column;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class DistritoDto {
-
-    private String codigo;
-    private String descripcion;
+    private String codDistrito;
+    private String codigoPais;
+    private String codDepartamento;
+    private String codProvincia;
+    private String nomDistrito;
 }

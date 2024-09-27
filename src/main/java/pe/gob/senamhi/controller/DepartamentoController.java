@@ -31,9 +31,4 @@ public class DepartamentoController {
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/get/{codDep}")
-    public ResponseEntity<?> getByCod(@PathVariable String codDep) throws Exception {
-        DepartamentoDto departamentoDto = services.findById(codDep);
-        return new ResponseEntity(departamentoDto, HttpStatus.OK);
-    }
 }

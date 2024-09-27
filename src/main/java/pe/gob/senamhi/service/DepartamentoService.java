@@ -50,8 +50,4 @@ public class DepartamentoService extends DepartamentoMapperService {
 
         return departamentoConvenioListDto;
     }
-
-    public DepartamentoDto findById(String codDep) {
-        return repository.findById(codDep).map(this::convertToDto).orElse(null);
-    }
 }

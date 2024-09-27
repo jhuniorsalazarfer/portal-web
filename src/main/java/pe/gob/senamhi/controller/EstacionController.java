@@ -19,12 +19,6 @@ public class EstacionController {
     @Autowired
     private EstacionService services;
 
-    @GetMapping("/list")
-    public ResponseEntity<List<EstacionDto>> getAll() {
-        List<EstacionDto> dtos = services.getAll();
-        return new ResponseEntity<>(dtos, HttpStatus.OK);
-    }
-
     @GetMapping("/listConvenio")
     public ResponseEntity<List<EstacionDto>> getAllConvenio() {
         List<EstacionDto> dtos = services.getAllConvenio();
