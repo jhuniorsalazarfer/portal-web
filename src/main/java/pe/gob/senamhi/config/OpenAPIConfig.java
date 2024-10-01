@@ -22,8 +22,8 @@ public class OpenAPIConfig {
 
         //Informacion de contacto
         Contact contact = new Contact();
-//        contact.setEmail("h4mpcode@gmail.com");
-//        contact.setName("HampCode");
+//        contact.setEmail("senamhi@gmail.com");
+//        contact.setName("senamhi");
         contact.setUrl("https://www.senamhi.gob.pe");
 
         //Informacion general de la API
@@ -32,7 +32,7 @@ public class OpenAPIConfig {
                 .version("1.0.0")
                 .contact(contact)
                 .description("This API exposes endpoints of Web Services");
-//                .termsOfService("https://www.hampcode.com/terms");
+//                .termsOfService("https://www.senamhi.gob.pe");
 
         return new OpenAPI()
                 .info(info);

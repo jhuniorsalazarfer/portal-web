@@ -1,12 +1,13 @@
 package pe.gob.senamhi.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -74,5 +75,9 @@ public class Estacion {
 
     @Column(name = "V_CLAS_ESTA")
     private String claseEstacion;
+
+    @OneToMany(mappedBy = "estacion")
+    @JsonIgnoreProperties("estacion")
+    private Set<EstacionConvenio> estacionConvenios = new HashSet<>();
 
 }

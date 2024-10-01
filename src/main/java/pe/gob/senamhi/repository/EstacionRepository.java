@@ -11,7 +11,9 @@ import java.util.List;
 @Repository
 public interface EstacionRepository extends JpaRepository<Estacion, String> {
 
-    @Query(value = "select e from Estacion e where e.codEstacion like %:codConvenio%")
+    @Query(value = "select e from Estacion e"+
+            "join EstacionConvenio ec on e.codEstacion = ec.codigoEsta "+
+            "where ec.idConvenio = :a1")
     List<Estacion> finByCodConvenio(@Param("codConvenio") String codConvenio);
 
     @Query(value = "select e from Estacion e where e.codEstacion like %:codConvenio% and e.codDepartamento=:codDepartamento")
@@ -19,4 +21,5 @@ public interface EstacionRepository extends JpaRepository<Estacion, String> {
 
     @Query(value = "select e from Estacion e where e.codEstacion like %:codConvenio% and e.codProvincia=:codProvincia and e.codDepartamento=:codDepartamento")
     List<Estacion> finByCodConvenioAndCodDepAndCodProv(@Param("codConvenio") String codConvenio, @Param("codProvincia") String codProvincia, @Param("codDepartamento") String codDepartamento);
+
 }
