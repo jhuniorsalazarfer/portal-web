@@ -16,11 +16,11 @@ public class EstacionConvenio {
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "COD_ESTA")
+    @Column(name = "COD_ESTA",insertable = false, updatable = false)
     private String codigoEsta;
 
     @Column(name = "ID_CONV")
-    private String idConvenio;
+    private String codConvenio;
 
     @Column(name = "ESTADO")
     private Integer estado;
