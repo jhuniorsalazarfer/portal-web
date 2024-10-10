@@ -21,14 +21,14 @@ public class EstacionController {
     private EstacionService services;
 
     @GetMapping("/listConvenio")
-    public ResponseEntity<List<EstacionReponseDto>> getAllConvenioReponse() {
-        List<EstacionReponseDto> dtos = services.getAllConvenioReponse();
+    public ResponseEntity<List<EstacionDto>> getAllConvenio() {
+        List<EstacionDto> dtos = services.getAllConvenio();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
     @GetMapping(path = "/get/{codEsta}")
     public ResponseEntity<?> getByCod(@PathVariable String codEsta) throws Exception {
-        EstacionDto estacionDto = services.findById(codEsta);
-        return new ResponseEntity(estacionDto, HttpStatus.OK);
+        EstacionReponseDto estacionReponseDto = services.findByIdDetail(codEsta);
+        return new ResponseEntity(estacionReponseDto, HttpStatus.OK);
     }
 }
