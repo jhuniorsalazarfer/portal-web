@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.senamhi.dto.DistritoDto;
 import pe.gob.senamhi.dto.EstacionDto;
+import pe.gob.senamhi.dto.ProvinciaDto;
 import pe.gob.senamhi.mapper.DistritoMapperService;
 import pe.gob.senamhi.repository.DistritoRepository;
 
@@ -48,5 +49,9 @@ public class DistritoService extends DistritoMapperService {
         }
 
         return distritoConvenioListDto;
+    }
+
+    public DistritoDto finByConDistAndCodProvAndCodDep(String codDist,String codProv, String codDep) {
+        return repository.finByConDistAndCodProvAndCodDep(codDist,codProv,codDep).map(this::convertToDto).orElse(null);
     }
 }

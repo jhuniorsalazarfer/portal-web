@@ -9,7 +9,6 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProvinciaDto {
-
     private String codProvincia;
     private String codigoPais;
     private String codDepartamento;

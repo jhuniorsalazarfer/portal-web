@@ -6,7 +6,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DepartamentoDto {
-    
 	private String codigoPais;
     private String codDepartamento;
     private String nomDepartamento;

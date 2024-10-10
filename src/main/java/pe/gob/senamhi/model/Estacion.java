@@ -19,22 +19,22 @@ public class Estacion {
     @Column(name = "V_COD_ESTA")
     private String codEstacion;
 
-    @Column(name = "V_COD_TIPO")
+    @Column(name = "V_COD_TIPO",insertable = false, updatable = false)
     private String codTipoEstacion;
 
     @Column(name = "V_NOM_ESTA")
     private String nombreEstacion;
 
-    @Column(name = "V_COD_CATE")
+    @Column(name = "V_COD_CATE",insertable = false, updatable = false)
     private String codCategoria;
 
-    @Column(name = "V_COD_DEP")
+    @Column(name = "V_COD_DEP",insertable = false, updatable = false)
     private String codDepartamento;
 
-    @Column(name = "V_COD_PROV")
+    @Column(name = "V_COD_PROV",insertable = false, updatable = false)
     private String codProvincia;
 
-    @Column(name = "V_COD_DIST")
+    @Column(name = "V_COD_DIST",insertable = false, updatable = false)
     private String codDistrito;
 
     @Column(name = "V_NOM_ANESTA")
@@ -79,5 +79,20 @@ public class Estacion {
     @OneToMany(mappedBy = "estacion")
     @JsonIgnoreProperties("estacion")
     private Set<EstacionConvenio> estacionConvenios = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(name = "V_COD_CATE")
+    @JsonIgnoreProperties("estacions")
+    private CategoriaEstacion categoriaEstacion;
+
+    @ManyToOne
+    @JoinColumn(name = "V_COD_TIPO")
+    @JsonIgnoreProperties("estacions")
+    private TipoEstacion tipoEstacion;
+
+    @ManyToOne
+    @JoinColumn(name = "V_COD_DEP")
+    @JsonIgnoreProperties("estacions")
+    private Departamento departamento;
 
 }

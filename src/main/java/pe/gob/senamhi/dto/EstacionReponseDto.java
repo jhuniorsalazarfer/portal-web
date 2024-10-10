@@ -7,15 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class EstacionDto {
+public class EstacionReponseDto {
     private String codEstacion;
-    private String codTipoEstacion;
+    private String nombreTipoEstacion;
     private String nombreEstacion;
-    private String codCategoria;
-    private String codDepartamento;
-    private String codProvincia;
-    private String codDistrito;
-    private String nombreAnteriorEstacion;
+    private String nombreCategoria;
+    private String nombreDepartamento;
+    private String nombreProvincia;
+    private String nombreDistrito;
     private String longitudGrado;
     private String longitudMinuto;
     private String longitudSegundo;
@@ -28,7 +27,4 @@ public class EstacionDto {
     private String codCondicion;
     private String codigoTipoEstacion;
     private String claseEstacion;
-
-    private TipoEstacionDto tipoEstacion;
-    private CategoriaEstacionDto categoriaEstacion;
 }

@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.gob.senamhi.dto.EstacionDto;
+import pe.gob.senamhi.dto.EstacionReponseDto;
 import pe.gob.senamhi.service.EstacionService;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class EstacionController {
     private EstacionService services;
 
     @GetMapping("/listConvenio")
-    public ResponseEntity<List<EstacionDto>> getAllConvenio() {
-        List<EstacionDto> dtos = services.getAllConvenio();
+    public ResponseEntity<List<EstacionReponseDto>> getAllConvenioReponse() {
+        List<EstacionReponseDto> dtos = services.getAllConvenioReponse();
         return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 

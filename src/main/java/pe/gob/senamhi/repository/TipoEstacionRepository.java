@@ -2,7 +2,7 @@ package pe.gob.senamhi.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import pe.gob.senamhi.model.EstacionConvenio;
+import pe.gob.senamhi.model.TipoEstacion;
 @Repository
-public interface EstacionConvenioRepository extends JpaRepository <EstacionConvenio, Long>{
+public interface TipoEstacionRepository extends JpaRepository<TipoEstacion, String> {
 }

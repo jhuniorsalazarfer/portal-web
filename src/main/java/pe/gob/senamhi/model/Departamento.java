@@ -31,7 +31,7 @@ public class Departamento {
     @Column(name = "N_AREA_DEP")
     private String areaDeparmanto;
 
-//    @OneToMany(mappedBy = "departamento")
-//    @JsonIgnoreProperties("departamento")
-//    private Set<Provincia> provincias = new HashSet<>();
+    @OneToMany(mappedBy = "departamento")
+    @JsonIgnoreProperties("departamento")
+    private Set<Estacion> estacions = new HashSet<>();
 }

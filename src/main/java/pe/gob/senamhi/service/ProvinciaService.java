@@ -2,6 +2,7 @@ package pe.gob.senamhi.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.gob.senamhi.dto.DepartamentoDto;
 import pe.gob.senamhi.dto.EstacionDto;
 import pe.gob.senamhi.dto.ProvinciaDto;
 import pe.gob.senamhi.mapper.ProvinciaMapperService;
@@ -47,5 +48,9 @@ public class ProvinciaService extends ProvinciaMapperService {
         }
 
         return provinciaConvenioListDto;
+    }
+
+    public ProvinciaDto finByCodProvAndCodDep(String codProv, String codDep) {
+        return repository.finByCodProvAndCodDep(codProv,codDep).map(this::convertToDto).orElse(null);
     }
 }
