@@ -8,10 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Getter
+@Setter
 @Entity
 @Table(name = "pw_dependencia", schema = "VMHCUZCO")
 public class Dependencia implements Serializable{
