@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArchivoDto extends ComunDto{
+public class ArchivoRequestDto {
 
     private String nombre;
     private String archivo;

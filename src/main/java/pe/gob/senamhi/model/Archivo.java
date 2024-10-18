@@ -24,7 +24,7 @@ public class Archivo implements Serializable {
     @Column(name = "NOMBRE")
     private String nombre;
 
-    @Column(name = "ARCHIVO")
+    @Column(name = "ARCHIVO", columnDefinition = "NCLOB")
     private String archivo;
 
     @Column(name = "COD_ESTA")
