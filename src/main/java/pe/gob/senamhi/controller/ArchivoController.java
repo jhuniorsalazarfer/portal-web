@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pe.gob.senamhi.dto.ArchivoDto;
+import pe.gob.senamhi.dto.EstacionReponseDto;
 import pe.gob.senamhi.service.ArchivoService;
 
 import javax.validation.Valid;
@@ -30,6 +31,12 @@ public class ArchivoController {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/get/{id}")
+    public ResponseEntity<?> getByCod(@PathVariable String codEsta) throws Exception {
+        ArchivoDto archivoDto = services.findByCodigoEstacion(codEsta);
+        return new ResponseEntity(archivoDto, HttpStatus.OK);
     }
 
 }

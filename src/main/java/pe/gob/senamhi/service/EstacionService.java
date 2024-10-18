@@ -14,16 +14,12 @@ public class EstacionService extends EstacionMapperService {
     private EstacionRepository repository;
     @Autowired
     private DepartamentoService departamentoService;
-
     @Autowired
     private ProvinciaService provinciaService;
-
     @Autowired
     private DistritoService distritoService;
-
     @Autowired
     private CategoriaEstacionService categoriaEstacionService;
-
     @Autowired
     private TipoEstacionService tipoEstacionService;
 
