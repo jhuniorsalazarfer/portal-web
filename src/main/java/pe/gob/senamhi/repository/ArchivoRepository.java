@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface ArchivoRepository extends JpaRepository<Archivo, Integer> {
 
-    @Query(value = "select e from Archivo a " +
+    @Query(value = "select a from Archivo a " +
             "WHERE a.codigoEstacion=:codEstacion")
     Optional<Archivo> findByCodigoEstacion(@Param("codEstacion") String codEstacion);
 }

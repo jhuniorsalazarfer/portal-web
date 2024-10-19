@@ -26,6 +26,12 @@ public class Archivo implements Serializable {
 
     @Column(name = "ARCHIVO", columnDefinition = "NCLOB")
     private String archivo;
+      
+    @Column(name = "MIMETYPE")
+    private String mimetype;
+    
+    @Column(name = "EXTENSION")
+    private String estension;
 
     @Column(name = "COD_ESTA")
     private String codigoEstacion;
