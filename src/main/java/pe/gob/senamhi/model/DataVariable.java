@@ -13,22 +13,19 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
+@IdClass(DataVariableId.class)
 @Table(name = "DADMVD_DATA", schema = "VMHCUZCO")
 public class DataVariable {
 	
-	@Id
-    @Column(name = "dummy_id", nullable = false)
-    private Long dummyId;
-	
-    @Column(name = "V_COD_ESTA", insertable = false, updatable = false)
+	@Column(name = "V_COD_ESTA", insertable = false, updatable = false)
     private String codEstacion;
 
     @Column(name = "D_FECHA_REG")
     private Date fechaRegistro;
-
+    @Id
     @Column(name = "V_COD_VAR", insertable = false, updatable = false)
     private Integer codVariable;
-
+    @Id
     @Column(name = "N_VALOR")
     private Double valor;
 
@@ -37,7 +34,7 @@ public class DataVariable {
 
     @Column(name = "V_COD_FUENTE")
     private String codFuente;
-
+    @Id
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "D_FECHA_INSERT")
     private Date fechaInsercion;
