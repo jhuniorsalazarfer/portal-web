@@ -27,7 +27,7 @@ public class Variable {
     @Column(name = "V_ABREV_VAR")
     private String abrevVariable;
 
-    @OneToMany(mappedBy = "variable")
-    @JsonIgnoreProperties("variable")
-    private Set<DataVariable> dataVariables = new HashSet<>();
+//    @OneToMany(mappedBy = "variable")
+//    @JsonIgnoreProperties("variable")
+//    private Set<DataVariable> dataVariables = new HashSet<>();
 }

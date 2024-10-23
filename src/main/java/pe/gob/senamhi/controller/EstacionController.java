@@ -37,7 +37,7 @@ public class EstacionController {
         return new ResponseEntity(estacionReponseDto, HttpStatus.OK);
     }
 
-    @GetMapping(path = "/get/{codEsta}")
+    @GetMapping(path = "/getData/{codEsta}")
     public ResponseEntity<?> getDataEstacion(@PathVariable String codEsta) throws Exception {
         DataEstacionDto dataEstacionDto = dataVariableService.findByCodEstacionDetail(codEsta);
         return new ResponseEntity(dataEstacionDto, HttpStatus.OK);

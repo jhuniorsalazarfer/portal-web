@@ -40,12 +40,12 @@ public class DataVariableService extends DataVariableMapperService {
 
         Date fechaParametro = fechaHace12horas.getTime();
 
-        List<DataVariableDto> dataVariableDtos = repository.listByFechaAndCodEstacion(fechaParametro,codEsta)
-                .stream().map(this::convertToDto)
+        List<DataVariableDto> dataVariableDtos = repository.GetByFechaAndCodEstacion(fechaParametro, codEsta)
+        		.stream().map(this::convertToDto)
                 .collect(Collectors.toList());
 
         dataEstacionDto.setEstacionReponse(estacionReponseDto);
-        dataEstacionDto.setArchivo(archivoDto);
+        //dataEstacionDto.setArchivo(archivoDto);
         dataEstacionDto.setDataHidrometricaHorario(dataVariableDtos);
 
         return dataEstacionDto;

@@ -10,10 +10,10 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public interface DataVariableRepository extends JpaRepository<DataVariable, String> {
+public interface DataVariableRepository extends JpaRepository<DataVariable, Long> {
 
     @Query(value = "select d from DataVariable d "+
-            "WHERE d.fechaInsercion >= :fechaParametro and d.fechaInsercion <= CURRENT_TIMESTAMP and d.codEstacion :codEstacion")
-    List<DataVariable> listByFechaAndCodEstacion(@Param("fechaParametro") Date fechaParametro, @Param("codConvenio") String codEstacion);
+            "WHERE d.codEstacion = :codEstacion and d.fechaInsercion >= :fechaParametro and d.fechaInsercion <= CURRENT_TIMESTAMP")
+    List<DataVariable> GetByFechaAndCodEstacion(@Param("fechaParametro") Date fechaParametro, @Param("codEstacion") String codEstacion);
 
 }

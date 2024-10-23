@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+
+import org.hibernate.annotations.Immutable;
+
 import java.util.Date;
 
 @Getter
@@ -12,32 +15,36 @@ import java.util.Date;
 @Entity
 @Table(name = "DADMVD_DATA", schema = "VMHCUZCO")
 public class DataVariable {
-
-    @Column(name = "V_COD_ESTA")
+	
+	@Id
+    @Column(name = "dummy_id", nullable = false)
+    private Long dummyId;
+	
+    @Column(name = "V_COD_ESTA", insertable = false, updatable = false)
     private String codEstacion;
 
     @Column(name = "D_FECHA_REG")
     private Date fechaRegistro;
 
-    @Column(name = "V_COD_VAR")
+    @Column(name = "V_COD_VAR", insertable = false, updatable = false)
     private Integer codVariable;
 
     @Column(name = "N_VALOR")
-    private Double abrevVariable;
+    private Double valor;
 
     @Column(name = "B_VALOR")
-    private Double bValor;
+    private String bValor;
 
     @Column(name = "V_COD_FUENTE")
-    private Double codFuente;
+    private String codFuente;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "D_FECHA_INSERT")
     private Date fechaInsercion;
 
-    @ManyToOne
-    @JoinColumn(name = "V_COD_VAR")
-    @JsonIgnoreProperties("dataVariables")
-    private Variable variable;
+//    @ManyToOne
+//    @JoinColumn(name = "V_COD_VAR")
+//    @JsonIgnoreProperties("dataVariables")
+//    private Variable variable;
 
 }

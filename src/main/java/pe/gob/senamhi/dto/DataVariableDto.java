@@ -14,10 +14,10 @@ public class DataVariableDto {
     private String codEstacion;
     private Date fechaRegistro;
     private Integer codVariable;
-    private Double abrevVariable;
-    private Double bValor;
-    private Double codFuente;
+    private Double valor;
+    private String bValor;
+    private String codFuente;
     private Date fechaInsercion;
 
-    private VariableDto variable ;
+//    private VariableDto variable ;
 }
