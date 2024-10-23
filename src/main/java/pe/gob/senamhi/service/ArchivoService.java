@@ -3,7 +3,6 @@ package pe.gob.senamhi.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.gob.senamhi.dto.ArchivoDto;
-import pe.gob.senamhi.dto.EstacionDto;
 import pe.gob.senamhi.mapper.ArchivoMapperService;
 import pe.gob.senamhi.model.Archivo;
 import pe.gob.senamhi.repository.ArchivoRepository;
@@ -21,8 +20,11 @@ public class ArchivoService extends ArchivoMapperService {
         Archivo archivo1 = repository.save(archivo);
         return Optional.ofNullable(this.convertToDto(archivo1));
     }
+
     public ArchivoDto findByCodigoEstacion(String codEsta) {
-        return repository.findByCodigoEstacion(codEsta).map(this::convertToDto).orElse(null);
+        return repository.findByCodigoEstacion(codEsta)
+                .map(this::convertToDto)
+                .orElse(null);
     }
 
 }

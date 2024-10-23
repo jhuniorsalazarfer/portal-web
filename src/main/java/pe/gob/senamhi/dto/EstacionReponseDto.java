@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EstacionReponseDto {
     private String codEstacion;
-    private String nombreTipoEstacion;
     private String nombreEstacion;
-    private String nombreCategoria;
     private String nombreDepartamento;
     private String nombreProvincia;
     private String nombreDistrito;
@@ -27,4 +25,7 @@ public class EstacionReponseDto {
     private String codCondicion;
     private String codigoTipoEstacion;
     private String claseEstacion;
+
+    private TipoEstacionDto tipoEstacion;
+    private CategoriaEstacionDto categoriaEstacion;
 }

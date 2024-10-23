@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ArchivoRequestDto {
+public class VariableDto {
 
-    private String nombre;
-    private String archivo;
-    private String codigoEstacion;
-
+    private Integer codVariable;
+    private String nombreVariable;
+    private String descVariable;
+    private String abrevVariable;
 }

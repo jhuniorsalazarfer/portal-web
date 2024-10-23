@@ -66,18 +66,12 @@ public class EstacionService extends EstacionMapperService {
             DistritoDto distritoDto = new DistritoDto();
             distritoDto = distritoService.finByConDistAndCodProvAndCodDep(estacionDto.getCodDistrito(),estacionDto.getCodProvincia(),estacionDto.getCodDepartamento());
 
-            CategoriaEstacionDto categoriaEstacionDto = new CategoriaEstacionDto();
-            categoriaEstacionDto = categoriaEstacionService.findById(estacionDto.getCodCategoria());
-
-            TipoEstacionDto tipoEstacionDto = new TipoEstacionDto();
-            tipoEstacionDto = tipoEstacionService.findById(estacionDto.getCodTipoEstacion());
-
             //SETEAR VALORES
             estacionReponseDto.setNombreDepartamento(departamentoDto.getNomDepartamento());
             estacionReponseDto.setNombreProvincia(provinciaDto.getNomProvincia());
             estacionReponseDto.setNombreDistrito(distritoDto.getNomDistrito());
-            estacionReponseDto.setNombreCategoria(categoriaEstacionDto.getDescripcionCategoriaL());
-            estacionReponseDto.setNombreTipoEstacion(tipoEstacionDto.getDescripcionTipo());
+            estacionReponseDto.setCategoriaEstacion(estacionDto.getCategoriaEstacion());
+            estacionReponseDto.setTipoEstacion(estacionDto.getTipoEstacion());
             estacionReponseDto.setCodEstacion(estacionDto.getCodEstacion());
             estacionReponseDto.setNombreEstacion(estacionDto.getNombreEstacion());
             estacionReponseDto.setLongitudGrado(estacionDto.getLongitudGrado());
