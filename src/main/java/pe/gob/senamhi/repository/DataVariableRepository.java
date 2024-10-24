@@ -14,6 +14,10 @@ public interface DataVariableRepository extends JpaRepository<DataVariable, Long
 
     @Query(value = "select d from DataVariable d "+
             "WHERE d.codEstacion = :codEstacion and d.fechaInsercion >= :fechaParametro and d.fechaInsercion <= CURRENT_TIMESTAMP")
-    List<DataVariable> GetByFechaAndCodEstacion(@Param("fechaParametro") Date fechaParametro, @Param("codEstacion") String codEstacion);
+    List<DataVariable> ListByFechaAndCodEstacion(@Param("fechaParametro") Date fechaParametro, @Param("codEstacion") String codEstacion);
+    
+    @Query(value = "select d from DataVariable d "+
+            "WHERE d.codEstacion = :codEstacion and d.codVariable = :codVariable and d.fechaInsercion >= :fechaParametro and d.fechaInsercion <= CURRENT_TIMESTAMP")
+    List<DataVariable> ListByFechaAndVariableAndCodEstacion(@Param("fechaParametro") Date fechaParametro, @Param("codVariable") Integer codVariable, @Param("codEstacion") String codEstacion);
 
 }

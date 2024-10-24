@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 public class DataVariableId implements Serializable {
-    private Integer codVariable;
+	private Date fechaRegistro;
+	private Integer codVariable;
     private Double valor;
-    private Date fechaInsercion;
 }

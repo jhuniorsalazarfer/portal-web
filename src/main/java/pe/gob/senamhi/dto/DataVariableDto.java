@@ -19,5 +19,5 @@ public class DataVariableDto {
     private String codFuente;
     private Date fechaInsercion;
 
-//    private VariableDto variable ;
+    private VariableDto variable ;
 }

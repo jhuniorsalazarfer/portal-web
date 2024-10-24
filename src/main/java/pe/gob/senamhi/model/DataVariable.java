@@ -6,8 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.Immutable;
-
 import java.util.Date;
 
 @Getter
@@ -19,13 +17,16 @@ public class DataVariable {
 	
 	@Column(name = "V_COD_ESTA", insertable = false, updatable = false)
     private String codEstacion;
-
+	
+	@Id
     @Column(name = "D_FECHA_REG")
     private Date fechaRegistro;
-    @Id
+	
+	@Id
     @Column(name = "V_COD_VAR", insertable = false, updatable = false)
     private Integer codVariable;
-    @Id
+    
+	@Id
     @Column(name = "N_VALOR")
     private Double valor;
 
@@ -34,14 +35,13 @@ public class DataVariable {
 
     @Column(name = "V_COD_FUENTE")
     private String codFuente;
-    @Id
-    @Temporal(TemporalType.TIMESTAMP)
+    
     @Column(name = "D_FECHA_INSERT")
     private Date fechaInsercion;
 
-//    @ManyToOne
-//    @JoinColumn(name = "V_COD_VAR")
-//    @JsonIgnoreProperties("dataVariables")
-//    private Variable variable;
+    @ManyToOne
+    @JoinColumn(name = "V_COD_VAR")
+    @JsonIgnoreProperties("dataVariables")
+    private Variable variable;
 
 }
