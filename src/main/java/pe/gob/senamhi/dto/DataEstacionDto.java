@@ -13,6 +13,6 @@ public class DataEstacionDto {
 
     private EstacionReponseDto estacionReponse;
     private ArchivoDto archivo;
-    private List<DataVariableDto> dataHidrometricaHorario ;
-    private List<DataVariableDto> dataHidrometricaReporte ;
+    private List<DataVariableDto> dataHidrometricaHorario;
+    private List<DataVariableResponseDto> dataVariableResponse;
 }
